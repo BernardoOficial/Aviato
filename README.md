@@ -10,12 +10,12 @@ Você precisará dos seguintes itens instalados corretamente em seu computador.
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Yarn](https://yarnpkg.com/en/)
 
-## Installation
+## Instalação
 
 * `git clone https://github.com/BernardoOficial/Aviato.git` this repository
 * `npm install`
 
-## Configuring
+## Configuração
 
 Se você gostaria de conectar sua loja a este exemplo, abra `src/index.js` e atualize o `domain` e `storefrontAccessToken`:
 
@@ -26,7 +26,7 @@ const client = Client.buildClient({
 });
 ```
 
-## Running
+## Rodando app
 
 Start a local server:
 
