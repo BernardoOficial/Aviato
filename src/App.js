@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Products from './components/Products';
 import Cart from './components/Cart';
 
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from './style/globalStyle';
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ScreensRouter from './screen/Router';
+
 const App = ({ client }) => {
 
 	const [isCartOpen, setIsCartOpen] = useState(false);
@@ -16,7 +23,7 @@ const App = ({ client }) => {
 				setCheckout({
 					...response
 				})
-			})	
+			})
 
 		client.product.fetchAll()
 			.then(response => {
@@ -24,7 +31,7 @@ const App = ({ client }) => {
 					...response
 				])
 			})
-		
+
 		client.shop.fetchInfo()
 			.then(response => {
 				setShop({
@@ -71,44 +78,50 @@ const App = ({ client }) => {
 				});
 			});
 	}
-	
+
 	const handleCartClose = () => {
 		setIsCartOpen(!isCartOpen);
 	}
 
 	return (
-		<div className="App">
-			<header className="App__header">
-				{!isCartOpen &&
-					<div className="App__view-cart-wrapper">
-					<button
-						className="App__view-cart"
-						onClick={() => setIsCartOpen(true)}
-					>
-						Cart
-					</button>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<Header />
+			<ScreensRouter />
+			<Footer />
+			<div className="App">
+				{/* <header className="App__header">
+					{!isCartOpen &&
+						<div className="App__view-cart-wrapper">
+						<button
+							className="App__view-cart"
+							onClick={() => setIsCartOpen(true)}
+						>
+							Cart
+						</button>
+						</div>
+					}
+					<div className="App__title">
+						<h1>{shop.name}: React Example</h1>
+						<h2>{shop.description}</h2>
 					</div>
-				}
-				<div className="App__title">
-					<h1>{shop.name}: React Example</h1>
-					<h2>{shop.description}</h2>
-				</div>
-			</header>
-			
-			<Products
-				products={products}
-				client={client}
-				addVariantToCart={addVariantToCart}
-			/>
+				</header>
 
-			<Cart
-				checkout={checkout}
-				isCartOpen={isCartOpen}
-				handleCartClose={handleCartClose}
-				updateQuantityInCart={updateQuantityInCart}
-				removeLineItemInCart={removeLineItemInCart}
-			/>
-		</div>
+				<Products
+					products={products}
+					client={client}
+					addVariantToCart={addVariantToCart}
+				/>
+
+				<Cart
+					checkout={checkout}
+					isCartOpen={isCartOpen}
+					handleCartClose={handleCartClose}
+					updateQuantityInCart={updateQuantityInCart}
+					removeLineItemInCart={removeLineItemInCart}
+				/> */}
+			</div>
+		</ThemeProvider>
 	);
 }
 

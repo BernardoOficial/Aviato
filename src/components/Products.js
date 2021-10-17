@@ -1,7 +1,7 @@
 import React from 'react';
 import Product from './Product';
 
-import "../styles/list-products/list-products.min.css";
+// import "../styles/list-products/list-products.min.css";
 
 const Products = ({
 	products,
@@ -10,7 +10,7 @@ const Products = ({
 }) => {
 
 	let productsAll = products.map((product) => {
-      
+
 		return (
 			<Product
 				addVariantToCart={addVariantToCart}
