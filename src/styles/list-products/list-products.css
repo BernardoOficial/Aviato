@@ -1,0 +1,113 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.default-button {
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #333333;
+  padding: 1rem 3.5rem;
+  min-width: 150px;
+  -webkit-box-shadow: inset 0 0 0 5px #333333, inset 0 0 0 6px #ffffff;
+          box-shadow: inset 0 0 0 5px #333333, inset 0 0 0 6px #ffffff;
+  -webkit-transition: -webkit-box-shadow 0.3s linear;
+  transition: -webkit-box-shadow 0.3s linear;
+  transition: box-shadow 0.3s linear;
+  transition: box-shadow 0.3s linear, -webkit-box-shadow 0.3s linear;
+}
+
+.default-button--extend {
+  width: 100%;
+}
+
+.default-button:hover {
+  -webkit-box-shadow: inset 0 0 0 1px #ffffff;
+          box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+.list-products {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.list-products .list-products__item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 calc(25% - 3rem);
+      -ms-flex: 1 1 calc(25% - 3rem);
+          flex: 1 1 calc(25% - 3rem);
+  margin: 3rem 1.5rem;
+  -webkit-box-shadow: 0 5px 5px 1px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 5px 5px 1px rgba(51, 51, 51, 0.1);
+}
+
+.list-products .list-products__item .list-products__item-image {
+  display: block;
+  padding: 10px;
+  background-color: #a3beb9;
+  width: 100%;
+  min-height: 252px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.list-products .list-products__item .list-products__item-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 1rem 0 1rem 1rem;
+  text-align: left;
+  color: #777777;
+  width: 232px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list-products .list-products__item .list-products__item-price {
+  font-size: 0.875rem;
+  text-align: left;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0 1rem 0.5rem;
+  color: #333333;
+}
