@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+	ul, li {
+		list-style: none;
+	}
+
     a {
         text-decoration: none;
 		text-decoration-color: #000000;
@@ -35,8 +39,15 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
     }
 
+	button {
+		border: 1px solid #333333;
+		outline: none;
+		padding: 5px 10px;
+	}
+
     body {
         font-family: 'Montserrat', sans-serif;
+		color: #333333;
     }
 
 `;
